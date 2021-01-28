@@ -1,5 +1,5 @@
-const { pathsToModuleNameMapper } = require("ts-jest/utils")
-const { compilerOptions } = require("./tsconfig")
+const { pathsToModuleNameMapper } = require("ts-jest/utils");
+const { compilerOptions } = require("./tsconfig");
 
 module.exports = {
   // Test setup file
@@ -22,6 +22,7 @@ module.exports = {
     // This ensures any path aliases in tsconfig also work in jest
     ...pathsToModuleNameMapper(compilerOptions.paths || {}),
     "\\.(css|less|sass|scss)$": "identity-obj-proxy",
+
     "\\.(gif|ttf|eot|svg|png|jpg|jpeg)$": "<rootDir>/test/__mocks__/fileMock.js",
   },
   watchPlugins: ["jest-watch-typeahead/filename", "jest-watch-typeahead/testname"],
