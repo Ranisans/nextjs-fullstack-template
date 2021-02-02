@@ -6,6 +6,10 @@ module.exports = ({ config }) => {
       presets: [require.resolve("babel-preset-react-app")],
     },
   });
+  config.module.rules.push({
+    test: /\.scss$/,
+    use: ["style-loader", "css-loader", "sass-loader"],
+  });
 
   config.resolve.extensions.push(".ts", ".tsx");
   return config;
